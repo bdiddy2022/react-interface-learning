@@ -1,10 +1,26 @@
+import { useCallback, useEffect, useState } from "react";
 import { BiCalendar } from "react-icons/bi"
 import Search from "./components/Search";
 import AddAppointment from "./components/AddAppointment";
-import appointmentList from "./data.json";
 import AppointmentInfo from "./components/AppointmentInfo";
 
 function App() {
+  
+  let [appointmentList, setAppointmentList] = useState([]);
+  
+  const fetchData = useCallback(() => {
+    fetch('./data.json')
+    .then(response => response.json())
+    .then (data => {
+        setAppointmentList(data)
+    })
+  }, [/*any tracked variables go here*/]);
+//"retrieving the data, and using useCallback() to monitor for any changes||additions to the data. this is how to work with a 'traditional' API"
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData]);
+
   return (
     <div className="App container mx-auto mt-3 font-thin">
       <h1 className="text-5xl mb-3">
