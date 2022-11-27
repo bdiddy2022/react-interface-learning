@@ -5,7 +5,6 @@ const Dropdown = ({toggle}) => {
   if(!toggle) {
     return null;
   }
-  
   else {
     return(
     <div className="origin-top-right absolute right-0 mt-2 w-56
@@ -48,7 +47,7 @@ const Search = () => {
               <button type="button" onClick={ () => 
                 { setToggleSort(!toggleSort) }
               }
-                className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
                 Sort By <BiCaretDown className="ml-2" />
               </button>
               <Dropdown toggle={ toggleSort }/>

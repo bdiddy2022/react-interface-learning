@@ -4,8 +4,8 @@ const AppointmentInfo = ({ appointment }) => {
         <li className="px-3 py-3 flex items-start">
           <button type="button" className="p-1.5 mr-1.5 mt-1 rounded text-white bg-red-500 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
             <BiTrash /></button>
-            <div className="flex-grow">
-            <div className="flex items-center">
+            <div className="flex-grow hover:bg-gray-100 hover:border-2 hover:border-blue-100">
+            <div className="flex items-center hover:bg-gray-100">
               <span className="flex-none font-medium text-2xl text-blue-500">{appointment.petName}</span>
               <span className="flex-grow text-right">{appointment.aptDate}</span>
             </div>
